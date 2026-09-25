@@ -1,0 +1,32 @@
+{
+  "name": "langgraph-lab-ts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "l1": "tsx lessons/l01_workflow.ts",
+    "l2": "tsx lessons/l02_whiteboard_rules.ts",
+    "l3": "tsx lessons/l03_save.ts",
+    "l4": "tsx lessons/l04_fan_out.ts",
+    "l5": "tsx lessons/l05_human_approval.ts",
+    "l6": "tsx lessons/l06_mini_game.ts",
+    "typecheck": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@langchain/anthropic": "^1.5.11",
+    "@langchain/core": "^1.2.12",
+    "@langchain/langgraph": "^1.4.18",
+    "@langchain/langgraph-checkpoint-sqlite": "^1.0.4",
+    "better-sqlite3": "^13.0.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
