@@ -15,7 +15,7 @@ import { Annotation, END, MemorySaver, Send, START, StateGraph } from "@langchai
 const PRIVATE_INFO: Record<string, string> = {
   value_fund: "決算書: 利益 -5%",
   momentum_bot: "株価: 3日連続上昇",
-  sns_retail: "SNS: 『ACME 神』がトレンド入り",
+  sns_retail: "SNS: 『AAPL 神』がトレンド入り",
   short_seller: "過去IR: 去年は『利益最優先』と言っていた",
   pension: "格付け: A 維持",
 };
@@ -70,7 +70,7 @@ const graph = new StateGraph(Board)
 const config = { configurable: { thread_id: "turn-1" } };
 console.log("=== 1回目: 5人に配る → 1人失敗 ===");
 try {
-  await graph.invoke({ ir_text: "ACME は成長投資の年です" }, config);
+  await graph.invoke({ ir_text: "AAPL は成長投資の年です" }, config);
 } catch {
   /* 想定内 */
 }

@@ -23,7 +23,7 @@ type BoardState = typeof Board.State;
 function draftAndApprove() {
   llmCalls.bad++;
   console.log(`    [draft_and_approve] LLM で IR 文を生成（${llmCalls.bad}回目）`);
-  const text = "ACME は過去最高の成長を遂げます";
+  const text = "AAPL は過去最高の成長を遂げます";
   const answer = interrupt({ 確認してください: text }); // ← ここで止まる
   return { ir_text: text, approved: answer === "ok" };
 }
@@ -40,7 +40,7 @@ function buildBad() {
 function draft() {
   llmCalls.good++;
   console.log(`    [draft]   LLM で IR 文を生成（${llmCalls.good}回目）`);
-  return { ir_text: "ACME は過去最高の成長を遂げます" };
+  return { ir_text: "AAPL は過去最高の成長を遂げます" };
 }
 
 function approve(board: BoardState) {

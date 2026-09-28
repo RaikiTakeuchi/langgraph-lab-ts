@@ -55,7 +55,7 @@ function resetGame() {
   for (const t of ["company", "ir_log", "decision", "memory", "price"]) {
     db.prepare(`DELETE FROM ${t} WHERE game_id = ?`).run(GAME_ID);
   }
-  db.prepare("INSERT INTO company VALUES (?, 100.0, '売上 +20%、利益 -5%', 'ACME の新製品が話題')").run(GAME_ID);
+  db.prepare("INSERT INTO company VALUES (?, 100.0, '売上 +20%、利益 -5%', 'AAPL の新製品が話題')").run(GAME_ID);
   db.prepare("INSERT INTO price VALUES (?, 0, 100.0)").run(GAME_ID); // ターン0 = 初期株価
 }
 
