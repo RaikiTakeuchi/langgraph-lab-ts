@@ -8,6 +8,7 @@
  *
  * 実行: npx tsx lessons/l01_workflow.ts
  */
+import { mkdirSync, writeFileSync } from "node:fs";
 import { Annotation, END, START, StateGraph } from "@langchain/langgraph";
 import { askInvestor, type Decision } from "../llm.ts";
 
@@ -70,7 +71,16 @@ const graph = new StateGraph(Board)
   .compile();
 
 console.log("=== 工程表の形（mermaid。Notion や GitHub に貼ると図になる）===");
-console.log((await graph.getGraphAsync()).drawMermaid());
+const mermaid = (await graph.getGraphAsync()).drawMermaid();
+console.log(mermaid);
+
+// 同じ図を Markdown に書き出す（GitHub や VS Code のプレビューで図として見られる）
+mkdirSync("graphs", { recursive: true });
+writeFileSync(
+  "graphs/l01_workflow.md",
+  `# Lesson 1 の工程表\n\n\`npm run l1\` で自動生成。\n\n\`\`\`mermaid\n${mermaid}\n\`\`\`\n`,
+);
+console.log("→ graphs/l01_workflow.md に書き出した\n");
 
 console.log("=== 実行 ===");
 const result = await graph.invoke({ investor: "value_fund" });

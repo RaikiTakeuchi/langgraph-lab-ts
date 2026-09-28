@@ -60,7 +60,7 @@ const config = { configurable: { thread_id: "game-1" } };
 
 console.log("=== 1. 実行 → publish で落ちる ===");
 try {
-  await graph.invoke({ company: "ACME" }, config);
+  await graph.invoke({ company: "AAPL" }, config);
 } catch {
   /* 想定内 */
 }
