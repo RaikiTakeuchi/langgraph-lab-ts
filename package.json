@@ -9,7 +9,8 @@
     "l4": "tsx lessons/l04_fan_out.ts",
     "l5": "tsx lessons/l05_human_approval.ts",
     "l6": "tsx lessons/l06_mini_game.ts",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "l7": "tsx lessons/l07_nested.ts"
   },
   "keywords": [],
   "author": "",
